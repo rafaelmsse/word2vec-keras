@@ -9,6 +9,8 @@ from sklearn.metrics import confusion_matrix, classification_report, accuracy_sc
 from tensorflow import keras
 from keras.models import Sequential, load_model
 from keras.layers import Dense, Dropout, Embedding, LSTM
+from keras.layers import Conv1D, MaxPooling1D
+
 from keras import utils
 from keras.preprocessing.text import Tokenizer
 from keras.callbacks import EarlyStopping, ReduceLROnPlateau
