@@ -134,12 +134,12 @@ class Word2VecKeras(object):
                                    weights=[embedding_matrix],
                                    input_length=self.k_max_sequence_len,
                                    trainable=False))
-        model.add(Conv1D(filters,
+        self.k_model.add(Conv1D(filters,
                  kernel_size,
                  padding='valid',
                  activation='relu',
                  strides=1))
-        model.add(MaxPooling1D(pool_size=pool_size))
+        self.k_model.add(MaxPooling1D(pool_size=pool_size))
         self.k_model.add(LSTM(self.k_lstm_neurons, dropout=0.5, recurrent_dropout=0.2))
         for hidden_layer in self.k_hidden_layer_neurons:
             self.k_model.add(Dense(hidden_layer, activation='relu'))
